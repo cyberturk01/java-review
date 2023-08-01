@@ -22,7 +22,7 @@ public class TwoSum {
         }
         return new int[]{};
     }
-    
+
     //Optimal Solution
     public static int[] twoSum2(int[] array, int target) {
         //Create HashMap
