@@ -10,13 +10,13 @@ public class ArraySorting {
         Sorting qs=new QuickSort();
         sort(qs);
 
-        MyLambda myLambda= ()-> System.out.println("Sorting the Array ");
-
         Sorting quickSort= ()-> System.out.println("Quick Sorting");
         as.sort(quickSort);
 
         Sorting bubbleSort= ()-> System.out.println("Bubble Sorting");
         as.sort(bubbleSort);
+
+
     }
 
     private static void sort(Sorting sorting) {
@@ -24,6 +24,3 @@ public class ArraySorting {
     }
 }
 
-interface MyLambda{
-    void print();
-}

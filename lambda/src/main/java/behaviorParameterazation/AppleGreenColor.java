@@ -8,10 +8,7 @@ public class AppleGreenColor implements Inventory {
 
     @Override
     public String prettyPrintApple(Apple apple) {
-        if(apple.getWeight()>200){
-            return "A Light "+apple.getColor()+" apple";
-        }else{
-            return "A Heavy "+apple.getColor()+" apple";
-        }
+        String weight = apple.getWeight() > 200 ? "Light" : "Heavy";
+        return "A " + weight + " " + apple.getColor() + " apple";
     }
 }
