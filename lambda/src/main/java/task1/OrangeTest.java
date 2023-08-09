@@ -1,6 +1,8 @@
 package task1;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 
@@ -17,13 +19,14 @@ public class OrangeTest {
 
         prettyPrintOrange(inventory, (orange) -> "An Orange of "+ orange.getWeight() + " g");
 
+        Comparator<Orange> orangeComparator = Comparator.comparingInt(Orange::getWeight);
+        inventory.sort(orangeComparator);
 
         Function<Orange, String> fancyFormatter= (orange) -> {
             String weight= orange.getWeight()< 200 ? "Light": "Heavy";
             return "A "+ weight + " " + orange.getColor() + " orange";
         };
         prettyPrintOrange(inventory, fancyFormatter);
-
     }
     private static void prettyPrintOrange(List<Orange> inventory, Function<Orange, String> orangeFormatter ){
         for(Orange orange : inventory){

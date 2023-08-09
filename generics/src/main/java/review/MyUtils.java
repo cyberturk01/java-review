@@ -11,6 +11,12 @@ public class MyUtils<T extends Person> {
         }
         System.out.println(list.size());
     }
+    public static <T> void printInfoArray(T[] array){
+        for (T each : array) {
+            System.out.println("eachElement = " + each);
+        }
+    }
+
     public static <T> void printInfo2(List<T> list){
         for(T t: list){
             System.out.println(t);
@@ -31,7 +37,7 @@ public class MyUtils<T extends Person> {
         return list.get(list.size()-1);
     }
 
-    public void  nameOfPerson(List<T> list){
+    public void nameOfPerson(List<T> list){
 
         list.forEach(person-> System.out.println(person.getName()));
 

@@ -10,29 +10,11 @@ public class ArrayListSample {
 
         System.out.println(numbers);
 
-        //removeIf use with Predicate
+        //removeIf use with Predicate best way of deleting lists
         numbers.removeIf(num -> num >= 90);
         System.out.println(numbers);
 
         Collections.sort(numbers);
         System.out.println("numbers = " + numbers);
-    }
-
-    static int[] getMinMax(List<Integer> list) {
-        int[] result = new int[2];
-        int min = list.get(0);
-        if (list.size() == 1) {
-            result[0] = min;
-        } else {
-            int max = list.get(1);
-            if (min < max) {
-                result[0] = min;
-                result[1] = max;
-            } else {
-                result[0] = max;
-                result[1] = min;
-            }
-        }
-        return result;
     }
 }
