@@ -35,5 +35,13 @@ public class StreamOperations {
                 .filter( i -> i%2 ==0)
                 .skip(1)
                 .forEach(System.out::println);
+
+        System.out.println("TASK");
+        //find the number of characters for each word
+        List<String> words = Arrays.asList("JAVA","APPLE","HONDA","DEVELOPER");
+        words.stream()
+                .map(String::length)
+                .forEach(System.out::println);
+
     }
 }
