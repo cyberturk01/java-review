@@ -28,7 +28,6 @@ public class CreatingStream {
         //Creating Stream from Values
         Stream<Integer> stream = Stream.of(1,2,4,5,6,7);
 
-
         myCourse.stream()
                 .filter( i -> i.getCourseName().startsWith("J"))
                 .map(i-> i.getCourseName().toUpperCase()) //applying the given function to the elements of this stream.

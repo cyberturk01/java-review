@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StateTask {
@@ -40,13 +41,12 @@ public class StateTask {
                 .forEach(System.out::println);
 
 //        Given two lists of numbers, how would you return all pairs of numbers? For
-//        example, given a list [1,2,3] and a list [3,4] you should return [(1,3),(1,4),(2,3),
-//        (2,4),(3,3),(3,4)]
+//        example, given a list [1,2,3] and a list [3,4] you should
+//        return [(1,3),(1,4),(2,3),(2,4),(3,3),(3,4)]  Sor!!
         List<Integer> numbers1 = Arrays.asList(1,2,3);
         List<Integer> numbers2 = Arrays.asList(3,4);
-        Stream<List<Integer>> numbers11 = Stream.of(numbers1, numbers2);
 
-        Stream<int[]> stream = numbers11.map(a -> a.stream().mapToInt(Integer::intValue).toArray());
+//        List<int[]> pairs =
 
     }
 }
