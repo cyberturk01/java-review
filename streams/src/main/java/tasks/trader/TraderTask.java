@@ -20,16 +20,16 @@ public class TraderTask {
                 .forEach(s -> System.out.println("s = " + s));
 
         //2. What are all the unique cities where the traders work?
-        long count = transactions.stream()
+        transactions.stream()
                 .map(cities -> cities.getTrader().getCity())
                 .distinct()
-                .count();
-        System.out.println("count = " + count);
+                .forEach(s -> System.out.println("s = " + s));
 
         //3. Find all traders from Cambridge and sort them by name.
         transactions.stream()
                 .map(Transaction::getTrader)
                 .filter(trader -> trader.getCity().equals("Cambridge"))
+                .distinct()
                 .sorted(comparing(Trader::getName).reversed())
                 .forEach(System.out::println);
 
@@ -37,8 +37,10 @@ public class TraderTask {
         String traders = transactions.stream()
                 .map(Transaction::getTrader)
                 .map(Trader::getName)
+                .distinct()
                 .sorted(String::compareTo)
-                .collect(Collectors.joining(", "));
+                .reduce("", (n1,n2)->n1+" "+n2);
+//                .collect(Collectors.joining(", "));
         System.out.println("string = " + traders);
 
         //5. Are any traders based in Milan?
@@ -63,7 +65,11 @@ public class TraderTask {
         Optional<Integer> smallestValue = transactions.stream()
                 .map(Transaction::getValue)
                 .reduce(Integer::min);
-        System.out.println("highestValue = " + smallestValue.get());
+        System.out.println("smallestValue = " + smallestValue.get());
+
+        Optional<Transaction> smallestValue2 = transactions.stream()
+                        .min(comparing(Transaction::getValue));
+        System.out.println("smallestValue2 = " + smallestValue2.get());
 
         //First 10 elements of the series of Fibonacci tuples using iterate method.
         Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1], t[0] + t[1]})
