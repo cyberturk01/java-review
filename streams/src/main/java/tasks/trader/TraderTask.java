@@ -68,7 +68,7 @@ public class TraderTask {
         System.out.println("smallestValue = " + smallestValue.get());
 
         Optional<Transaction> smallestValue2 = transactions.stream()
-                        .min(comparing(Transaction::getValue));
+                .min(comparing(Transaction::getValue));
         System.out.println("smallestValue2 = " + smallestValue2.get());
 
         //First 10 elements of the series of Fibonacci tuples using iterate method.
