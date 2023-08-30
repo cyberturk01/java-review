@@ -62,11 +62,11 @@ public class JavaCollectors {
                 .collect(Collectors.partitioningBy(Dish::isVegetarian));
         System.out.println("isVegetarian = " + isVegetarian);
 
-        //GroupingBy()
+        //GroupingBy()  IMPORTANT!!!!!
         Map<Type, List<Dish>> dishType = DishData.getData().stream()
                 .collect(Collectors.groupingBy(Dish::getType));
         System.out.println("dishType = " + dishType);
-
+  // new code here
 
     }
 }

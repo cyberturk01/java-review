@@ -31,12 +31,6 @@ public class PaymentController {
         // payment response success result 1 failure result 0
         // If the payment is unsuccessful, the error message and error code field will also be filled.
 
-        String names[]= {"gok","orh","hal","nur"};
-        for(String name: names){
-            System.out.println("name = " + name);
-        }
-        Integer gok=(int)2;
-
         PaymentService paymentService = decidePaymentTypeThatWillBeProcessed(authRequest);
         if (force3Ds(authRequest)) {
             return paymentService.auth3D(authRequest);
